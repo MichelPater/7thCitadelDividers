@@ -1,6 +1,6 @@
-// The 7th Continent
+// The 7th Citadel
 // Custom card dividers
-// by phroozen
+// Original by phroozen on thingiverse : https://www.thingiverse.com/thing:3714742
 
 // pro tip: print in 0.2 layer height and use Prusa Color Print to add a color change on layer 2 to get colored text
 
