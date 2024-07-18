@@ -28,7 +28,7 @@ divide_by = 3;
 // etc
 divider_align = 0;
 
-$fn = 32;
+// Make tab solid
 
 // Uses addons
 // helper module for drawing rectangles with rounded borders
@@ -107,13 +107,12 @@ module rounded_square_(dim, corners, center=false){
 
 
 function get_divider_offset(divide_by, divider_align) = 
-(divide_by == 1) ? (divider_align * 51) :
-divider_align * (51 / (divide_by -1));
+    divide_by == 1 ? (divider_align * 51) :
+        divider_align * (51 / (divide_by -1));
 
-// Example usage
+function setStartingValueOfTab(solid_tab) =
 divider_offset = get_divider_offset(divide_by, divider_align);
 
-echo(divider_offset);
 
 
 difference(){
@@ -123,9 +122,11 @@ difference(){
         rounded_square([30,30], corners=[2,2,2,2]);
     };
     translate([divider_offset+text_offset,85,0.2])
-    linear_extrude(height=10){
-        text(text = str(divider_num), font = num_font, size = 8, spacing = 1 );
-    };
+    {
+        linear_extrude(height=10){
+            text(text = str(divider_num), font = num_font, size = 8, spacing = 1 );
+        };
+    }
 };
 
 
