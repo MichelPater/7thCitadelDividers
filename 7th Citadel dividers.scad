@@ -105,19 +105,13 @@ module rounded_square_(dim, corners, center=false){
   }
 }
 
-function get_divider_offset(divide_by, divider_align) = 
-    (divide_by == 1) ? (divider_align * 51) :
-    (divide_by == 2) ? (divider_align * 51) :
-    (divide_by == 3) ? (divider_align * 25.5) :
-    (divide_by == 4) ? (divider_align * 17) :
-    0;
 
-function get_divider_offset2(divide_by, divider_align) = 
+function get_divider_offset(divide_by, divider_align) = 
 (divide_by == 1) ? (divider_align * 51) :
 divider_align * (51 / (divide_by -1));
 
 // Example usage
-divider_offset = get_divider_offset2(divide_by, divider_align);
+divider_offset = get_divider_offset(divide_by, divider_align);
 
 echo(divider_offset);
 
