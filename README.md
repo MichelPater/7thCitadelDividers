@@ -13,6 +13,9 @@ I merely changed the code to support more 'divisions' for the tab location:
 ![alt text](images/divide_fourths_midle_left.png "Divided by fourths aligned middle left")
 ![alt text](images/divide_fourths_midle_right.png "Divided by fourths aligned middle right")
 
+And a way to make solid tabs:
+![alt text](images/solid_tab_example.png "Example of center aligned solid tab")
+
 Furthermore I used the amazing divider template made by BoardGameGeek user `Nitrik` as a basis for generating the `.stl` files. See [https://boardgamegeek.com/filepage/274641/additional-dividers](https://boardgamegeek.com/filepage/274641/additional-dividers) for the original template. 
 And also check out the post in the forums with additional information: [https://boardgamegeek.com/thread/3253085/addtional-custom-dividers](https://boardgamegeek.com/thread/3253085/addtional-custom-dividers).
 
