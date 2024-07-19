@@ -29,6 +29,8 @@ divide_by = 3;
 divider_align = 0;
 
 // Make tab solid
+// 0 == No, keep small tab, 1 == Yes, make solid tab stretching across divider
+solid_tab = 0;
 
 // Uses addons
 // helper module for drawing rectangles with rounded borders
@@ -111,15 +113,21 @@ function get_divider_offset(divide_by, divider_align) =
         divider_align * (51 / (divide_by -1));
 
 function setStartingValueOfTab(solid_tab) =
-divider_offset = get_divider_offset(divide_by, divider_align);
+    solid_tab == 0 ? divider_offset : 0;
 
+function setWidthOfTab(solid_tab) =
+    solid_tab == 0 ? 30 : 81;
+
+
+divider_offset = get_divider_offset(divide_by, divider_align);
 
 
 difference(){
     linear_extrude(height=0.6)union() {
-        rounded_square([81,83], corners=[5,5,5,5]);
-        translate([divider_offset,65,0])
-        rounded_square([30,30], corners=[2,2,2,2]);
+        rounded_square([81,83], corners=[5,5,5,5]);         
+        translate([setStartingValueOfTab(solid_tab),65,0]){ 
+            rounded_square([setWidthOfTab(solid_tab),30], corners=[2,2,2,2]);
+        }
     };
     translate([divider_offset+text_offset,85,0.2])
     {
